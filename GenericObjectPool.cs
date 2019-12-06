@@ -25,8 +25,8 @@ public abstract class GenericObjectPool<T> : Monobehaviour where T : Component
     for (int i = 0; i < count; i++)
     {
       var obj = Instantiate(_prefab);
-      HideObject(obj);
-      _objectPool.Enqueue(obj);
+      obj.gameObject.SetActive(false);
+      ReturnToPool(obj);
     }
   }
 
@@ -38,16 +38,6 @@ public abstract class GenericObjectPool<T> : Monobehaviour where T : Component
   protected void ReturnToPool(T obj)
   {
     _objectPool.Enqueue(obj);
-  }
-
-  private void HideObject(T obj)
-  {
-    obj.gameObject.SetActive(false);
-  }
-
-  private void ShowObject(T obj)
-  {
-    obj.gameObject.SetActive(true);
   }
 #endregion
 }

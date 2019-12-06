@@ -6,6 +6,7 @@ public abstract class GenericObjectPool<T> : Monobehaviour where T : Component
   [SerializeField] private protected T _prefab;
   [SerializeField] private protected int _poolCount;
   private Queue<T> _objectPool = new Queue<T>();
+  public Transform Spawnpoint;
 
 #region Singleton Implementation
   private static GenericObjectPool<T> _instance;
@@ -41,12 +42,12 @@ public abstract class GenericObjectPool<T> : Monobehaviour where T : Component
 
   private void HideObject(T obj)
   {
-    obj.SetActive(false);
+    obj.gameObject.SetActive(false);
   }
 
   private void ShowObject(T obj)
   {
-    obj.SetActive(true);
+    obj.gameObject.SetActive(true);
   }
 #endregion
 }

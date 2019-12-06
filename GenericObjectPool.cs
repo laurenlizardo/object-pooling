@@ -7,6 +7,17 @@ public abstract class GenericObjectPool<T> : Monobehaviour where T : Component
   [SerializeField] private protected int _poolCount;
   private Queue<T> _objectPool = new Queue<T>();
 
+#region Singleton Implementation
+  private static GenericObjectPool<T> _instance;
+  public static GenericObjectPool<T> Instance => _instance;
+
+  private void Awake()
+  {
+    if (_instance == null) _instance = this;
+    else Destroy(gameObject);
+  }
+#endregion
+
 #region Object Pooling Methods
   protected void FillPool(int count)
   {

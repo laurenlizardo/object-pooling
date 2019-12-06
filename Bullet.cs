@@ -7,8 +7,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
   private Rigidbody _rigidbody => GetComponent<Rigidbody>();
-  [SerializeField] private float _speed;
-  [SerializeField] private float _lifetime;
+  [SerializeField] private float _speed = 50;
+  [SerializeField] private float _lifetime = 3;
   private float _refreshTime;
   public bool HasExpired => Time.time >= _refreshTime;
 
@@ -24,14 +24,15 @@ public class Bullet : MonoBehaviour
   private void Update()
   {
     // Travel in the forward position of the spawnpoint
+    // Hide gameObject when refreshtime has been reached
     _rigidbody.velocity = transform.forward * _speed;
+
+    if (HasExpired) gameObject.SetActive(false);
   }
 
   private void OnDisable()
   {
-    // Hide gameObject
     // Return to the object pool
-    gameObject.SetActive(false);
     BulletPool.Instance.ReturnToPool(this);
   }
 #endregion

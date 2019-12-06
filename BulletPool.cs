@@ -1,8 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// In the inspector, create an empty GameObject with this component attached to it.
-/// Fill the necesarry fields for the prefab, pool count, and spawnpoint.
+/// In the Inspector, create an empty GameObject with this component attached to it.
+/// Fill the necessary fields for the following variables: _prefab, _poolCount, Spawnpoint.
 /// </summary>
 public class BulletPool : GenericObjectPool<Bullet>
 {

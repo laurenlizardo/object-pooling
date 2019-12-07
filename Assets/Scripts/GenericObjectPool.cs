@@ -1,7 +1,7 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
-public abstract class GenericObjectPool<T> : Monobehaviour where T : Component
+public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
 {
   [SerializeField] private protected T _prefab;
   [SerializeField] private protected int _poolCount;
@@ -30,12 +30,12 @@ public abstract class GenericObjectPool<T> : Monobehaviour where T : Component
     }
   }
 
-  protected T NextPoolObject()
+  public T NextPoolObject()
   {
     return _objectPool.Dequeue();
   }
 
-  protected void ReturnToPool(T obj)
+  public void ReturnToPool(T obj)
   {
     _objectPool.Enqueue(obj);
   }

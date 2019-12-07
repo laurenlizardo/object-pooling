@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.Space))
     {
-      BulletPool.Instance.NextObject().gameObject.SetActive(true);
+      BulletPool.Instance.NextPoolObject().gameObject.SetActive(true);
     }
   }
 #endregion

@@ -30,12 +30,12 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
     }
   }
 
-  protected T NextPoolObject()
+  public T NextPoolObject()
   {
     return _objectPool.Dequeue();
   }
 
-  protected void ReturnToPool(T obj)
+  public void ReturnToPool(T obj)
   {
     _objectPool.Enqueue(obj);
   }

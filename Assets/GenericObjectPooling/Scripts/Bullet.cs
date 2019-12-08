@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
   private void OnEnable()
   {
     // Set the prefab's transform to be that of the spawnpoint's transform
-    // Track lapsedtime
+    // Track refreshtime
     SetTransform(BulletPool.Instance.Spawnpoint);
     _refreshTime = Time.time + _lifetime;
   }

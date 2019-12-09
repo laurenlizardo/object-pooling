@@ -6,7 +6,6 @@ using UnityEngine;
 /// </summary>
 public class BulletPool : GenericObjectPool<Bullet>
 {
-
 #region MonoBehaviour Methods
   private void Start()
   {

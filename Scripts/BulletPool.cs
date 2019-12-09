@@ -6,10 +6,13 @@ using UnityEngine;
 /// </summary>
 public class BulletPool : GenericObjectPool<Bullet>
 {
+
 #region MonoBehaviour Methods
   private void Start()
   {
     FillPool(_poolCount);
+
+    if (_isPoolParent) SetPoolParent(this.gameObject);
   }
 #endregion
 }

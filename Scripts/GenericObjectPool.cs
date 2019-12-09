@@ -5,6 +5,7 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
 {
   [SerializeField] private protected T _prefab;
   [SerializeField] private protected int _poolCount;
+  [SerializeField] private protected bool _isPoolParent;
   private Queue<T> _objectPool = new Queue<T>();
   public Transform Spawnpoint;
 
@@ -40,4 +41,12 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
     _objectPool.Enqueue(obj);
   }
 #endregion
+
+  protected void SetPoolParent(GameObject parent)
+  {
+    foreach (T obj in _objectPool)
+    {
+      obj.transform.SetParent(parent.transform);
+    }
+  }
 }

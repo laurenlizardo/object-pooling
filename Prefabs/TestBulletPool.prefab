@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2796385185921773257}
-  - component: {fileID: 7575659762426610133}
+  - component: {fileID: 8619122525834259177}
   m_Layer: 0
-  m_Name: PlayerBulletPool
+  m_Name: TestBulletPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7575659762426610133
+--- !u!114 &8619122525834259177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,9 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4354244167422701524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 183e9b840bc874a348bf50227f413dcb, type: 3}
+  m_Script: {fileID: 11500000, guid: ae9e4907efc00429b812ade7d1f25d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 3034831617847314314, guid: d41d84d4a80e842249fa2acb83f71fae, type: 3}
-  _poolCount: 0
+  _prefab: {fileID: 8733223691755983963, guid: d41d84d4a80e842249fa2acb83f71fae, type: 3}
+  _poolCount: 50
+  _isPoolParent: 1
   Spawnpoint: {fileID: 0}

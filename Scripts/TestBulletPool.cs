@@ -4,7 +4,7 @@ using UnityEngine;
 /// In the Inspector, create an empty GameObject with this component attached to it.
 /// Fill the necessary fields for the following variables: _prefab, _poolCount, Spawnpoint.
 /// </summary>
-public class BulletPool : GenericObjectPool<Bullet>
+public class TestBulletPool : TestGenericObjectPool<TestBullet>
 {
 #region MonoBehaviour Methods
   private void Start()

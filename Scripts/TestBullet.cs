@@ -4,7 +4,7 @@ using UnityEngine;
 /// Set up a GameObject prefab that contains a Rigidbody component before attaching this component.
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
-public class Bullet : MonoBehaviour
+public class TestBullet : MonoBehaviour
 {
   private Rigidbody _rigidbody => GetComponent<Rigidbody>();
   [SerializeField] private float _speed = 50;
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
   {
     // Set the prefab's transform to be that of the spawnpoint's transform
     // Track refreshtime
-    SetTransform(BulletPool.Instance.Spawnpoint);
+    SetTransform(TestBulletPool.Instance.Spawnpoint);
     _refreshTime = Time.time + _lifetime;
   }
 
@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
   private void OnDisable()
   {
     // Return to the object pool
-    BulletPool.Instance.ReturnToPool(this);
+    TestBulletPool.Instance.ReturnToPool(this);
   }
 #endregion
 

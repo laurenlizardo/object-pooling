@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public abstract class TestGenericObjectPool<T> : MonoBehaviour where T : Component
+public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
 {
   [SerializeField] private protected T _prefab;
   [SerializeField] private protected int _poolCount;
@@ -10,8 +10,8 @@ public abstract class TestGenericObjectPool<T> : MonoBehaviour where T : Compone
   public Transform Spawnpoint;
 
 #region Singleton Implementation
-  private static TestGenericObjectPool<T> _instance;
-  public static TestGenericObjectPool<T> Instance => _instance;
+  private static GenericObjectPool<T> _instance;
+  public static GenericObjectPool<T> Instance => _instance;
 
   private void Awake()
   {

@@ -33,7 +33,7 @@ public class TestBullet : MonoBehaviour
   private void OnDisable()
   {
     // Return to the object pool
-    TestBulletPool.Instance.ReturnToPool(this);
+    TestBulletPool.Instance.ReturnObjectToPool(this);
   }
 #endregion
 

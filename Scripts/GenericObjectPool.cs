@@ -21,13 +21,13 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
 #endregion
 
 #region Object Pooling Methods
-  protected void FillPool(int count)
+  protected void AddObjectsToPool(int count)
   {
     for (int i = 0; i < count; i++)
     {
       var obj = Instantiate(_prefab);
       obj.gameObject.SetActive(false);
-      ReturnToPool(obj);
+      ReturnObjectToPool(obj);
     }
   }
 
@@ -36,7 +36,7 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
     return _objectPool.Dequeue();
   }
 
-  public void ReturnToPool(T obj)
+  public void ReturnObjectToPool(T obj)
   {
     _objectPool.Enqueue(obj);
   }
@@ -49,4 +49,12 @@ public abstract class GenericObjectPool<T> : MonoBehaviour where T : Component
       obj.transform.SetParent(parent.transform);
     }
   }
+
+#region Other Methods
+  public void SetSpawnTransform(T obj, Transform spawn)
+  {
+    obj.transform.position = spawn.position;
+    obj.transform.rotation = spawn.rotation;
+  }
+#endregion
 }

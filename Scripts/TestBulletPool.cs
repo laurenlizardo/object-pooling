@@ -9,8 +9,7 @@ public class TestBulletPool : GenericObjectPool<TestBullet>
 #region MonoBehaviour Methods
   private void Start()
   {
-    FillPool(_poolCount);
-
+    AddObjectsToPool(_poolCount);
     if (_isPoolParent) SetPoolParent(this.gameObject);
   }
 #endregion
